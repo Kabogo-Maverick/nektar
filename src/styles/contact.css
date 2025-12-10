@@ -1,0 +1,118 @@
+/* MAIN SECTION */
+.contact-section {
+    padding-top: 15vh;
+    padding: 3rem 2rem;
+    background: #0b0b0b;
+    min-height: 100vh;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .contact-main-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    padding-top: 10vh;
+  }
+  
+  .contact-main-sub {
+    opacity: 0.7;
+    margin-bottom: 2.5rem;
+  }
+  
+  /* CARD */
+  .contact-card {
+    max-width: 600px;
+    margin: auto;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(14px);
+    animation: fadeUp 0.5s ease;
+  }
+  
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* FORM */
+  .contact-form {
+    text-align: left;
+  }
+  
+  .input-group {
+    margin-bottom: 1.4rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-group label {
+    margin-bottom: 0.5rem;
+    opacity: 0.85;
+    font-weight: 600;
+  }
+  
+  .input-group input,
+  .input-group textarea {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 1rem;
+    transition: 0.25s;
+  }
+  
+  .input-group input:focus,
+  .input-group textarea:focus {
+    border-color: #ff2e63;
+    background: rgba(255, 255, 255, 0.12);
+  }
+  
+  /* BUTTON */
+  .contact-submit {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 14px;
+    border: none;
+    background: linear-gradient(90deg, #ff8a00, #ff2e63);
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: 0.3s;
+  }
+  
+  .contact-submit:hover {
+    transform: scale(1.04);
+    opacity: 0.9;
+  }
+  
+  /* SUCCESS MESSAGE */
+  .sent-msg {
+    margin-top: 1rem;
+    font-weight: 700;
+    color: #4aff8a;
+    text-align: center;
+    animation: pop 0.4s ease;
+  }
+  
+  @keyframes pop {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  

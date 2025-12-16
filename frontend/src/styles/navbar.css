@@ -1,0 +1,155 @@
+/* RESET HELPERS */
+* {
+  box-sizing: border-box;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 1300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0.7rem 1.6rem;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 1000;
+}
+
+/* LOGO */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.nav-logo img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.nav-logo span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #fff;
+  font-style: italic;
+}
+
+/* LINKS (DESKTOP) */
+.nav-links {
+  display: flex;
+  gap: 2.2rem;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding-bottom: 4px;
+  transition: opacity 0.25s ease;
+}
+
+/* underline hover effect */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  opacity: 0.85;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  margin: 5px 0;
+  background: #fff;
+  transition: 0.3s ease;
+}
+
+/* hamburger animation */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .nav-links {
+    position: absolute;
+    top: 72px;
+    right: 16px;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(14px);
+    padding: 1.4rem 1.6rem;
+    border-radius: 14px;
+
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links a {
+    font-size: 1.25rem;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}

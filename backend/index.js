@@ -28,3 +28,10 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });
+
+const sequelize = require('./config/database');
+const User = require('./models/User');
+
+sequelize.sync({ force: true }) // force: true drops tables first (good for dev)
+    .then(() => console.log('Database & tables created!'))
+    .catch(err => console.log(err));
